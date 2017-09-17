@@ -97,11 +97,15 @@ class HomeController extends Controller
          * @var $paginator \Knp\Component\Pager\Paginator
          */
         $paginator = $this->get('knp_paginator');
-        $result = $paginator->paginate(
-            $queryBuilder,
-            $request->query->getInt('page', 1),
-            $request->query->getInt('limit', 15)
-        );
+        try {
+            $result = $paginator->paginate(
+                $queryBuilder,
+                $request->query->getInt('page', 1),
+                $request->query->getInt('limit', 15)
+            );
+        } catch (\Exception $exception) {
+            throw $this->createNotFoundException('Toks rūšiavimas negalimas.');
+        }
 
         return $this->render(
             'orderList/orderList.html.twig',

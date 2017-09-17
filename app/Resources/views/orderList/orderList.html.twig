@@ -29,7 +29,7 @@
             <th>{{ knp_pagination_sortable(ordersLists, 'El. paštas', 'o.email') }}</th>
             <th>{{ knp_pagination_sortable(ordersLists, 'Telefonas', 'o.telephone') }}</th>
             <th>{{ knp_pagination_sortable(ordersLists, 'Miestas', 'o.city') }}</th>
-            <th>{{ knp_pagination_sortable(ordersLists, 'Užsakymo data', 'o.date|date') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Užsakymo data', 'o.date') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
                 <td>{{ ordersList.email }}</td>
                 <td>{{ ordersList.telephone }}</td>
                 <td>{{ ordersList.city }}</td>
-                <td>{{ ordersList.date|date ("Y-m-d, H:i") }}</td>
+                <td>{{ ordersList.date|date("Y-m-d, H:i") }}</td>
             </tr>
         {% endfor %}
         </tbody>
