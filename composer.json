@@ -1,5 +1,5 @@
 {
-    "name": "zsaki/cargo",
+    "name": "zsaki/nfq-ring",
     "license": "proprietary",
     "type": "project",
     "autoload": {
