@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}E-shop{% endblock %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-reboot.css') }}">
+   {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body class="container">
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-4">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {{ (app.request.attributes.get('_route') == 'homepage') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ path('homepage') }}">Pradžia</a>
+            </li>
+            <li class="nav-item {{ (app.request.attributes.get('_route') == 'orders_list') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ path('orders_list') }}">Užsakymai</a>
+            </li>
+            <li class="nav-item {{ (app.request.attributes.get('_route') == 'contacts') ? 'active' : '' }}" >
+                <a class="nav-link" href="{{ path('contacts') }}">Kontaktai</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+{% block footer %}
+    <footer class="container-fluid text-center">
+        <p>Živilė Šakienė@2017</p>
+    </footer>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/bootstrap.js') }}"></script>
+{% endblock %}
+</body>
+</html>

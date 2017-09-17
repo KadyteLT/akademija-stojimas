@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+{% block title %}Užsakymai{% endblock %}
+
+{% block body %}
+
+    <h2>Užsakymai</h2>
+
+    {% if form is defined %}
+        <div class="row">
+            <div class="col">
+                {{ form_start(form, {method: 'get', action: path('orders_list'), attr: {class: 'form-inline mb-3' }}) }}
+                <div class="form-group">
+                    {{ form_widget(form.text) }}
+                </div>
+                <button type="submit" class="btn btn-info ml-2">Ieškoti</button>
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    {% endif %}
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Id', 'o.id') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Vardas', 'o.name') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Pavardė', 'o.lastName') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Dydis', 'o.ringSize') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'El. paštas', 'o.email') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Telefonas', 'o.telephone') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Miestas', 'o.city') }}</th>
+            <th>{{ knp_pagination_sortable(ordersLists, 'Užsakymo data', 'o.date|date') }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ordersList in ordersLists %}
+            <tr>
+                <td>{{ ordersList.id }}</td>
+                <td>{{ ordersList.name }}</td>
+                <td>{{ ordersList.lastName }}</td>
+                <td>{{ ordersList.ringSize }}</td>
+                <td>{{ ordersList.email }}</td>
+                <td>{{ ordersList.telephone }}</td>
+                <td>{{ ordersList.city }}</td>
+                <td>{{ ordersList.date|date ("Y-m-d, H:i") }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        {{ knp_pagination_render(ordersLists) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Ačiū! Jūsų užsakymas sėkmingai užregistruotas</h4>
+        <p>Artimiausiu metu mes su jumis susieksime.</p>
+        <a class="btn btn-success" href="{{ path('homepage') }}" role="button">Atgal</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+{% block title %}Sužadietuvių žiedų parduotuvė{% endblock %}
+{% block body %}
+    <header>
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="max-height: 250px; overflow: hidden">
+                    <img src="{{ asset('assets/img/header.jpg') }}" class="img-fluid" height="250" alt="header image"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End of JumboTron -->
+
+    <div class="container text-center">
+        <div class="m-3">
+            <h2>Išsikirtinis sužadietuvių žiedas</h2>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <img class="rounded mx-auto d-block" src="{{ asset('assets/img/ziedas.jpg') }}" alt="ring"
+                     height="200"/>
+            </div>
+            <div class="col">
+                <p class="text-left">Kvadrato formos deimantas "Royal". Tai žiedas kurį devi tikros princeses, itin
+                    prabangus žiedas, kuris tinka ir ypatingoms progoms.
+                    Šoninių briliantų svoris yra 0,36 ct, toks brangakmenių kiekis suteikia nepaprastą prabangos
+                    jausmą. </p>
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Akmens tipas</th>
+                        <td>Natūralus Deimantas</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Brilianto karatai</th>
+                        <td>0.40 PR</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Metalas</th>
+                        <td>14K geltonas auksas</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Akmens sertifikatas:
+                        </th>
+                        <td>LPR</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Dizainas</th>
+                        <td>PRADA</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-5">
+            <h3 class="text-center">Užsisakyk jau dabar</h3>
+            {{ form_start(form, {attr:{novalidate: 'novalidate'}}) }}
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <button type="submit" class="btn-primary btn">Užsakyti</button>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+        <div class="col-md-7"><img class="rounded mx-auto d-block" src="{{ asset('assets/img/vestuves.jpg') }}"
+                                   alt="vestuves"/></div>
+    </div>
+{% endblock %}
