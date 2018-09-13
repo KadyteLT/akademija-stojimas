@@ -1,4 +1,4 @@
-NFQ Akademija 2017
+Akademija 2017
 =====
 
 Rudens semestras
